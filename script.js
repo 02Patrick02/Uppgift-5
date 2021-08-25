@@ -17,14 +17,14 @@ function init() {
 } // End init
 window.onload = init; // Se till att init aktiveras då sidan är inladdad
 
-function showFruit() {
+// Funktion som avgör vilken bild som ska visas
+function showFruit(a) {
     let nr;
     let fruitUrl;
 
     nr = Number(inputElem[1].value);
     fruitUrl = document.getElementById("fruitImg");
     
-
     if(nr == 1){
         fruitUrl.src = "./pics/fruit1.jpg";
     }
@@ -39,5 +39,8 @@ function showFruit() {
     }
     else if(nr == 5) {
         fruitUrl.src = "./pics/fruit5.jpg";
+    }   
+    if(isNaN(nr)){
+        msgElem.innerHTML = "Skriv ett nummer";
     }
 }
